@@ -9,7 +9,8 @@ This project took place over 2 weeks of work, in a group of 2 people. <br>
 
 <H1>MOULINETTE RESULT</H1>
 As the people at epitech know, the project is corrected by the mill, of which here are the results : <br>
-Prerequies met : <br>
+Prerequies met : 
+<br>
 - Global : 66.3% <br>
 - Basic Test : 100% <br>
 - Easy Test : 83.3% <br>
