@@ -25,8 +25,7 @@ Prerequies met :
 - Medium Format Test Final : 16.7% <br>
 - Hard Format Test Final : 66.7% <br>
 - Folow Up Mark : 30/100 <br>
-- Review Mark : Not Evaluated For Now <br>
-- Final Mark : Not Evaluated For Now <br>
+- Review Mark : 4142/4444
 
 <H1>⚠️ ATTENTION TO TEK 0 ⚠️</H1>
 My friends, I absolutely do not encourage you to copy this repository, I remind you that any cheat will be detected by our friend the "moulitriche" and that you therefore risk a -42. <br>
