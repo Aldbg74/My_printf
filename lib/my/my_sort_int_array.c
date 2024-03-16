@@ -23,7 +23,7 @@ int is_smaller(int this, int *array, int size)
 void my_sort_int_array(int *array, int size)
 {
     for (int i = 0; i < (size - 1); i++) {
-        if ( i < is_smaller(i, array, size))
+        if (i < is_smaller(i, array, size))
             my_swap(&array[i], &array[is_smaller(i, array, size)]);
     }
 }

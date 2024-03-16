@@ -6,7 +6,11 @@
 */
 #include "../../include/my.h"
 
-int my_strlowcase(void)
+char *my_strlowcase(char *str)
 {
-    return 0;
+    int len_str = my_strlen(str);
+
+    for (int i = 0; i < len_str; i++)
+        str[i] = str[i] >= 65 && str[i] <= 90 ? (str[i] + 32) : str[i];
+    return str;
 }

@@ -5,11 +5,9 @@
 ** my_printf.h
 */
 
-// #pragma once
 #include "./my.h"
 #ifndef MY_PRINTF
     #define MY_PRINTF
-
 
 int isflags(char ch);
 int precision(const char **format);
@@ -21,7 +19,6 @@ char *my_getnbr_base(int nbr, char const *base);
 void sign(double *value, char **p);
 void integer_part(double *value, char **p);
 void precisions(double *value, char **p, int precision, char *buffer_end);
-int my_printf(const char *format, ...);
 void print_longlong(long long value);
 
 typedef int priority_f;

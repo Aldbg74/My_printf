@@ -6,7 +6,10 @@
 */
 #include "../../include/my.h"
 
-int my_str_isprintable(void)
+int my_str_isprintable(char *str)
 {
-    return 0;
+    for (int i = 0; str[i]; i++)
+        if (str[i] < 0 || str[i] > 127)
+            return 0;
+    return 1;
 }

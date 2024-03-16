@@ -9,23 +9,21 @@
 
 void my_itoa(int value, char *buffer)
 {
-    char *p = buffer;
-    int i = 0;
-    int j;
+    char *str = buffer;
+    int parser = 0;
+    int tmp = value;
+    int len = 0;
 
-    if (value == 0) {
-        *p++ = '0';
-    } else {
-        while (value != 0) {
-            *p++ = '0' + (value % 10);
-            value /= 10;
-        }
+    while (tmp > 0) {
+        tmp /= 10;
+        len++;
     }
-    *p = '\0';
-    j = p - buffer - 1;
-    while (i < j) {
-        my_swap_char(buffer + i, buffer + j);
-        i++;
-        j--;
+    if (value == 0)
+        len = 1;
+    str[len] = '\0';
+    while (len >= 0) {
+        len--;
+        str[len] = value % 10 + '0';
+        value /= 10;
     }
 }

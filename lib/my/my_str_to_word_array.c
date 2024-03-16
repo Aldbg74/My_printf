@@ -1,38 +1,30 @@
 /*
 ** EPITECH PROJECT, 2023
-** B-CPE-100-LYN-1-1-cpoolday09-marin.lagie
+** B-MUL-100-LYN-1-1-myradar-marin.lagie
 ** File description:
 ** my_str_to_word_array.c
 */
 
 #include "../../include/my.h"
 
-int is_charac(char c, int status)
+static int is_charac(char c, int status)
 {
-    if (status == 1 && c >= 33 && c <= 126)
-            return 1;
-    if (status == 2 && c >= 33 && c <= 126 && c != 58)
-            return 1;
+    if (c >= 33 && c <= 126 && ((status == 1) || (status == 2 && c != 58)))
+        return 1;
     return 0;
 }
 
-int word_count(const char *c)
+static int word_count(const char *c)
 {
-    int count = 0;
-    int i = 0;
+    int count = 1;
 
-    while (c[i] != '\0') {
-        while (c[i] == ' ' && c[i] != '\0')
-            i++;
-        if (c[i] != '\0')
+    for (int i = 0; c[i]; i++)
+        if (c[i] == ' ')
             count++;
-        while (c[i] != ' ' && c[i] != '\0')
-            i++;
-    }
     return count;
 }
 
-int len_word(const char *str, int i)
+static int len_word(const char *str, int i)
 {
     int x = i;
 
@@ -41,26 +33,42 @@ int len_word(const char *str, int i)
     return x - i;
 }
 
-char **my_str_to_word_array(const char *str)
+static int next_carac(const char *str, int i)
 {
-    char **word_array = malloc(sizeof(char *) * (word_count(str) + 1));
+    int x = i;
+
+    while (is_charac(str[x], 1) == 0)
+        x++;
+    return x;
+}
+
+static void process(char const *str, char **array, int nb_word)
+{
+    int word_len = 0;
     int pos_str = 0;
     int pos_tab = 0;
-    int word_len;
 
-    while (pos_tab < word_count(str)) {
-        while (str[pos_str] == ' ' && str[pos_str] != '\0')
-            pos_str++;
+    while (pos_tab < nb_word) {
         word_len = 0;
-        while (is_charac(str[pos_str], 1) == 1) {
-            word_len++;
+        pos_str = next_carac(str, pos_str);
+        array[pos_tab] = malloc((len_word(str, pos_str) + 1) * sizeof(char));
+        while (str[pos_str] && is_charac(str[pos_str], 1) != 0) {
+            array[pos_tab][word_len] = str[pos_str];
             pos_str++;
+            word_len++;
         }
-        word_array[pos_tab] = malloc(sizeof(char) * (word_len + 1));
-        for (int i = 0; i < word_len; i++)
-            word_array[pos_tab][i] = str[pos_str - word_len + i];
-        word_array[pos_tab][word_len] = '\0';
+        array[pos_tab][word_len] = '\0';
+        pos_str++;
         pos_tab++;
     }
+    array[pos_tab] = NULL;
+}
+
+char **my_str_to_word_array(const char *str)
+{
+    int nb_word = word_count(str);
+    char **word_array = malloc(sizeof(char *) * (nb_word + 1));
+
+    process(str, word_array, nb_word);
     return word_array;
 }

@@ -24,7 +24,6 @@ SRC = lib/my/is_smaller.c \
 	lib/my/my_revstr.c \
 	lib/my/my_show_word_array.c \
 	lib/my/my_showmem.c \
-	lib/my/my_showstr.c \
 	lib/my/my_sort_int_array.c \
 	lib/my/my_sqrt.c \
 	lib/my/my_str_isalpha.c \
@@ -51,22 +50,25 @@ SRC = lib/my/is_smaller.c \
 	lib/my/my_itoa.c \
 	lib/my/my_isnum.c \
 	lib/my/my_putnbr_base_long.c \
-	src/print/print_char.c \
-	src/print/print_num.c \
-	src/syntax/isflags.c \
-	src/syntax/priority.c \
-	src/attribut/precision.c \
-	src/attribut/width.c \
-	src/attribut/flags.c\
-	src/print/print_scientific.c \
-	src/print/print_float.c \
-	src/print/print_hexa.c \
-	src/print/print_address.c \
-	src/get/my_getnbr_base.c \
-	src/my_printf.c \
-	src/print/print_s.c \
-	src/print/print_ll.c \
-
+	lib/my/src/my_printf/print/print_char.c \
+	lib/my/src/my_printf/print/print_num.c \
+	lib/my/src/my_printf/print/print_scientific.c \
+	lib/my/src/my_printf/print/print_float.c \
+	lib/my/src/my_printf/print/print_hexa.c \
+	lib/my/src/my_printf/print/print_address.c \
+	lib/my/src/my_printf/print/print_s.c \
+	lib/my/src/my_printf/print/print_ll.c \
+	lib/my/src/my_printf/syntax/isflags.c \
+	lib/my/src/my_printf/syntax/long.c \
+	lib/my/src/my_printf/syntax/priority.c \
+	lib/my/src/my_printf/attribut/precision.c \
+	lib/my/src/my_printf/attribut/width.c \
+	lib/my/src/my_printf/attribut/flags.c\
+	lib/my/src/my_printf/get/my_getnbr_base.c \
+	lib/my/src/my_printf/my_printf.c \
+	lib/my/my_swap_char.c \
+	lib/my/my_atoi.c \
+	lib/my/ch_into_str.c
 OBJ = ${SRC:.c=.o}
 CFLAGS = -g3
 NAME = libmy.a
