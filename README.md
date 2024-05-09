@@ -8,6 +8,13 @@ The printf had to have all the flags of the printf (or at least the minimum to m
 This project took place over 2 weeks of work, in a group of 2 people. <br>
 
 <H1>🤖 MOULINETTE RESULT 🤖</H1>
+<br>
+
+> [!IMPORTANT]
+> The project has been updated since the passage of the Moulinette, 
+> these notes are given for information purposes only
+<br>
+
 As the people at epitech know, the project is corrected by the mill, of which here are the results : <br>
 Prerequies met : 
 <br>
